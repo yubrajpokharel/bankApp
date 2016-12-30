@@ -3,6 +3,7 @@ package com.bank.service;
 import com.bank.domain.User;
 import com.bank.domain.security.UserRole;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,4 +19,9 @@ public interface UserService {
     boolean checkEmailExists(String email);
     boolean checkUserPhone(String phone);
     User createUser(User user, Set<UserRole> userRoles);
+
+    User saveUser (User user);
+    List<User> findUserList();
+    void enableUser (String username);
+    void disableUser (String username);
 }

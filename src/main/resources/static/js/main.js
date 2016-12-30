@@ -24,16 +24,16 @@
     $.transferDisplay = function () {
         $("#transferFrom").change(function() {
             if ($("#transferFrom").val() == 'Primary') {
-                $('#transferTo').val('Savings');
-            } else if ($("#transferFrom").val() == 'Savings') {
+                $('#transferTo').val('Saving');
+            } else if ($("#transferFrom").val() == 'Saving') {
                 $('#transferTo').val('Primary');
             }
         });
 
         $("#transferTo").change(function() {
             if ($("#transferTo").val() == 'Primary') {
-                $('#transferFrom').val('Savings');
-            } else if ($("#transferTo").val() == 'Savings') {
+                $('#transferFrom').val('Saving');
+            } else if ($("#transferTo").val() == 'Saving') {
                 $('#transferFrom').val('Primary');
             }
         });

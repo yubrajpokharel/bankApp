@@ -7,6 +7,7 @@ import com.bank.domain.User;
 import com.bank.domain.security.UserRole;
 import com.bank.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,7 +23,7 @@ import java.util.Set;
  */
 
 @Controller
-public class HomeController {
+public class HomeController{
 
     @Autowired
     private UserService userService;
