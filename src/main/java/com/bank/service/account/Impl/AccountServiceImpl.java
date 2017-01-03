@@ -100,4 +100,6 @@ public class AccountServiceImpl implements AccountService {
     private int autoGen(){
         return ++NEXT_ACCOUNT_NUMBER;
     }
+
+
 }
