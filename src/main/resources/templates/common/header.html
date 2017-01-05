@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" th:href="@{/userFront}">Home</a>
+            <a class="navbar-brand page-scroll" th:href="@{/userFront}" th:text="#{nav.home}"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,36 +54,38 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounts <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  th:text="#{nav.account}"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/account/primaryAccount}">Primary</a></li>
+                        <li><a th:href="@{/account/primaryAccount}" th:text="#{nav.primaryAccount}"></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a th:href="@{/account/savingsAccount}">Savings</a></li>
+                        <li><a th:href="@{/account/savingsAccount}" th:text="#{nav.savingAccount}"></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transfer <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  th:text="#{nav.transfer}"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/transfer/betweenAccounts}">Between Accounts</a></li>
-                        <li><a th:href="@{/transfer/toSomeoneElse}">To Someone Else</a></li>
+                        <li><a th:href="@{/transfer/betweenAccounts}"  th:text="#{nav.transfer.myAccount}"></a></li>
+                        <li><a th:href="@{/transfer/toSomeoneElse}" th:text="#{nav.transfer.toSomeone}"></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a th:href="@{/transfer/recipient}">Add/Edit Recipient</a></li>
+                        <li><a th:href="@{/transfer/recipient}" th:text="#{nav.transfer.myRecipient}"></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Appointment <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{nav.appointment}" > <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/appointment/create}">Schedule an Appointment</a></li>
+                        <li><a th:href="@{/appointment/create}" th:text="#{nav.appointment.create}"></a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="?lang=en" >English</a></li>
+                <li><a href="?lang=np" >नेपाली</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Me <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{nav.profile}" > <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/user/profile}">Profile</a></li>
+                        <li><a th:href="@{/user/profile}" th:text="#{nav.profile.profile}" ></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a th:href="@{/logout}">Logout</a></li>
+                        <li><a th:href="@{/logout}" th:text="#{nav.profile.logout}"></a></li>
                     </ul>
                 </li>
             </ul>
