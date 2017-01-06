@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <form th:action="@{/account/withdraw}" method="post">
                 <div class="form-group" >
-                    <label for="accountType">1. Please select the account you would like to withdraw:</label>
+                    <label for="accountType" th:text="#{withdraw.account}"></label>
                     <select class="form-control" th:value="${accountType}" name="accountType" id="accountType" required="required">
                         <option disabled="disabled" selected="selected"> -- select your account -- </option>
                         <option>Primary</option>
@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>2. Please specify the amount you would like to withdraw: </label>
-                    <span class="input-group-addon">Amount $</span>
+                    <label th:text="#{withdraw.amount}"> </label>
+                    <span class="input-group-addon" th:text="#{post.amount}" > $</span>
                     <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
                 </div>
 
@@ -27,7 +27,7 @@
                        name="${_csrf.parameterName}"
                        value="${_csrf.token}"/>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Withdraw</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{withdraw}" ></button>
             </form>
 
             <div class="col-md-6">

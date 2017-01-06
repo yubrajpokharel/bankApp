@@ -1,5 +1,7 @@
 package com.bank;
 
+import com.bank.interceptor.PerformanceInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.MessageSource;
@@ -15,6 +17,7 @@ import java.util.Locale;
 
 @SpringBootApplication
 public class OnlineBankApplication extends WebMvcConfigurerAdapter {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineBankApplication.class, args);
@@ -46,6 +49,7 @@ public class OnlineBankApplication extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(localeChangeInterceptor());
+        registry.addInterceptor(new PerformanceInterceptor()).excludePathPatterns("/js", "/css", "/error");
     }
 
 }

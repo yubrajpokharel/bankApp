@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <form th:action="@{/account/deposit}" method="post">
                 <div class="form-group" >
-                    <label for="accountType">1. Please select the account you would like to deposit:</label>
+                    <label for="accountType" th:text="#{deposit.account}" ></label>
                     <select class="form-control" th:value="${accountType}" name="accountType" id="accountType" required="required">
                         <option disabled="disabled" selected="selected"> -- select your account -- </option>
                         <option>Primary</option>
@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>2. Please specify the amount you would like to deposit: </label>
-                    <span class="input-group-addon">Amount $</span>
+                    <label th:text="#{deposit.amount}" > </label>
+                    <span class="input-group-addon" th:text="#{amount}" > $</span>
                     <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
                 </div>
 
